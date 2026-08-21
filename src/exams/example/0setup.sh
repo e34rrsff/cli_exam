@@ -1,13 +1,13 @@
 setup() {
-    adduser -s /usr/bin/nologin "$student_name"
+    adduser -s /usr/bin/nologin "$STUDENT"
 
     local wd="/home/$STUDENT"
     local home_files="${BASH_SOURCE[0]%/*}/skel"
 
     mount -t tmpfs tmpfs "$wd"
-    cp -r "$home_files"/* "$home_files"/.* "$student_home"
+    cp -r "$home_files"/* "$home_files"/.* "$wd"
 
-    bins_dir="$student_home/.local/bin"
+    bins_dir="$wd/.local/bin"
     mkdir -p "$bins_dir"
 
     local allowed_programs=(
@@ -20,5 +20,5 @@ setup() {
         [ -f "$program" ] && ln -s "$program" "$bins_dir/${program##*/}"
     done
 
-    chown "$student_name":"$student_name" -R "$student_home"
+    chown "$STUDENT":"$STUDENT" -R "$wd"
 }
