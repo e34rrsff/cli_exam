@@ -1,3 +1,3 @@
 cleanup() {
-    umount "/home/$STUDENT"
+    #umount "/home/$STUDENT"
 }

@@ -4,7 +4,7 @@ setup() {
     local wd="/home/$STUDENT"
     local home_files="${BASH_SOURCE[0]%/*}/skel"
 
-    mount -t tmpfs tmpfs "$wd"
+    #mount -t tmpfs tmpfs "$wd"
     cp -r "$home_files"/* "$home_files"/.* "$wd"
 
     bins_dir="$wd/.local/bin"

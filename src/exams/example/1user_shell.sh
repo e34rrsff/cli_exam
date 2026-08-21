@@ -1,3 +1,3 @@
 run() {
-    su -l "$STUDENT" -c "bash -r"
+    sudo -u "$STUDENT" "bash -r"
 }
