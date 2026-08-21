@@ -1,3 +1,3 @@
 run() {
-    su -l "$student_name" -c "bash -r"
+    su -l "$STUDENT" -c "bash -r"
 }

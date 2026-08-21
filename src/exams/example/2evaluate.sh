@@ -1,7 +1,7 @@
 score() {
     SCORE=0
 
-    if [ -f "/home/$student_name/pass" ]; then
+    if [ -f "/home/$STUDENT/pass" ]; then
         score++
     fi
 }
