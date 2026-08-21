@@ -14,7 +14,7 @@ dialog_cmd="dialog --title 'SSH Exam' --menu 'Available Exams' 0 0 0 "
 exam_entries=()
 for dir in "$EXAMS_DIR/"*; do
     if [ -d "$dir" ]; then
-        exam_entries+=("${dir#exams/}")
+        exam_entries+=("${dir#$EXAMS_DIR/}")
     fi
 done
 
@@ -28,7 +28,7 @@ dialog_cmd+='3>&1 1>&2 2>&3 3>&-'
 chosen_exam=$(eval "$dialog_cmd")
 
 clear
-for script in "$EXAMS_DIR/${exams[$chosen_exam - 1]}/"*.sh; do
+for script in "$EXAMS_DIR/${exam_entries[$chosen_exam - 1]}"/*.sh; do
     . "$script"
 done
 

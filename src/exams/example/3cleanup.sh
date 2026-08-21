@@ -1,1 +1,3 @@
-umount "/home/$STUDENT"
+cleanup() {
+    umount "/home/$STUDENT"
+}
