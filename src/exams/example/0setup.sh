@@ -1,5 +1,5 @@
 setup() {
-    adduser -s /usr/bin/nologin "$STUDENT"
+    adduser -D -s /usr/bin/nologin "$STUDENT"
 
     local wd="/home/$STUDENT"
     local home_files="${BASH_SOURCE[0]%/*}/skel"
